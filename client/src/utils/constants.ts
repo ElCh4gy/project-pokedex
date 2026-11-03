@@ -12,8 +12,8 @@ export const GITHUB_PROFILE_URL = 'https://github.com/ElCh4gy';
 export const POKEAPI_DOCS_URL = 'https://pokeapi.co/docs/v2';
 
 export const AUTHOR = {
-  name: 'Pendiente: tu nombre',
-  bio: 'Pendiente: tu descripción.',
+  name: 'Jorge Alberto Chagoya Cavazos',
+  bio: 'Estudiante de desarrollo web en TripleTen. En el programa he creado aplicaciones con React, TypeScript, Node.js, Express y MongoDB, y esta Pokédex es mi proyecto final.',
 };
 
 export const TECHNOLOGIES = ['React', 'TypeScript', 'Vite', 'React Router', 'PokeAPI'];

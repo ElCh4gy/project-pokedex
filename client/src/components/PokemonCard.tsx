@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import placeholder from '../images/pokemon-placeholder.svg';
 import { TYPE_LABELS } from '../utils/constants';
 import { formatDexNumber, formatMeasure, formatPokemonName } from '../utils/format';
@@ -6,9 +7,10 @@ import '../styles/pokemon-card.css';
 
 interface PokemonCardProps {
   pokemon: Pokemon;
+  children?: ReactNode;
 }
 
-function PokemonCard({ pokemon }: PokemonCardProps) {
+function PokemonCard({ pokemon, children }: PokemonCardProps) {
   const name = formatPokemonName(pokemon.name);
 
   return (
@@ -40,6 +42,7 @@ function PokemonCard({ pokemon }: PokemonCardProps) {
           <dd>{formatMeasure(pokemon.weightInKilograms, 'kg')}</dd>
         </div>
       </dl>
+      {children}
     </article>
   );
 }

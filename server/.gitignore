@@ -1,0 +1,17 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependencias y compilación
+node_modules
+dist
+
+# Sistema y editores
+.DS_Store
+.idea
+.vscode
+
+# Variables de entorno
+.env
+.vercel

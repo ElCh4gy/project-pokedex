@@ -5,9 +5,11 @@ import Navigation from './Navigation';
 
 interface HeaderProps {
   isBusy: boolean;
+  isCheckingSession: boolean;
+  onSignOut: () => void;
 }
 
-function Header({ isBusy }: HeaderProps) {
+function Header({ isBusy, isCheckingSession, onSignOut }: HeaderProps) {
   return (
     <header className="header">
       <div className="header__shell">
@@ -23,7 +25,7 @@ function Header({ isBusy }: HeaderProps) {
           <span className="header__led header__led_color_yellow" />
           <span className="header__led header__led_color_green" />
         </div>
-        <Navigation />
+        <Navigation isCheckingSession={isCheckingSession} onSignOut={onSignOut} />
       </div>
     </header>
   );

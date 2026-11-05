@@ -7,8 +7,6 @@ Aplicación full stack para buscar Pokémon y guardar tus favoritos. Es el proye
 - **Front end:** https://project-pokedex-client.vercel.app
 - **API:** https://project-pokedex-api.vercel.app
 
-**Aplicación desplegada:** https://project-pokedex-client.vercel.app
-
 ## Funcionalidad
 
 - Catálogo que se muestra de 12 en 12, con el botón «Mostrar más».

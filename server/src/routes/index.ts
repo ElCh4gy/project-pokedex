@@ -12,10 +12,9 @@ const router = Router();
 router.post('/signup', signupLimiter, createUser);
 router.post('/signin', signinLimiter, login);
 
-// Todo lo que viene después requiere un token válido
-router.use(auth);
-router.use('/users', usersRouter);
-router.use('/favorites', favoritesRouter);
+// Cada recurso exige un token válido; una ruta que no existe responde 404 con o sin token
+router.use('/users', auth, usersRouter);
+router.use('/favorites', auth, favoritesRouter);
 router.use(notFound);
 
 export default router;

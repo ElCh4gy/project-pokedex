@@ -2,6 +2,8 @@
 
 Aplicación para buscar Pokémon por nombre o número y consultar sus tipos, altura y peso. Es el proyecto final del programa de desarrollo web de TripleTen. Los datos vienen de [PokeAPI](https://pokeapi.co/docs/v2).
 
+**Aplicación desplegada:** https://project-pokedex-client.vercel.app
+
 ## Funcionalidad
 
 - Catálogo que se muestra de 12 en 12, con el botón «Mostrar más».

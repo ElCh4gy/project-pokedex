@@ -1,6 +1,11 @@
 # Pokédex
 
-Aplicación para buscar Pokémon por nombre o número y consultar sus tipos, altura y peso. Es el proyecto final del programa de desarrollo web de TripleTen. Los datos vienen de [PokeAPI](https://pokeapi.co/docs/v2).
+Aplicación full stack para buscar Pokémon y guardar tus favoritos. Es el proyecto final del programa de desarrollo web de TripleTen. Los datos del catálogo vienen de [PokeAPI](https://pokeapi.co/docs/v2).
+
+## Despliegue
+
+- **Front end:** https://project-pokedex-client.vercel.app
+- **API:** https://project-pokedex-api.vercel.app
 
 **Aplicación desplegada:** https://project-pokedex-client.vercel.app
 
@@ -10,35 +15,57 @@ Aplicación para buscar Pokémon por nombre o número y consultar sus tipos, alt
 - Búsqueda por parte del nombre (`char`) o por número exacto (`25` o `#25`).
 - Indicador de carga, aviso cuando no hay resultados y mensaje de error si la petición falla.
 - La última búsqueda se conserva en `localStorage` entre visitas.
+- Registro e inicio de sesión contra una API propia, con la sesión restaurada al volver.
+- Encabezado distinto según haya sesión o no.
+- Página privada `/favorites`: cada persona guarda y elimina sus Pokémon, y solo ve los suyos.
 - Diseño adaptable desde 320 px.
 
 ## Tecnologías
 
-- React, TypeScript y Vite
-- React Router
-- `fetch` y PokeAPI
-- CSS con flexbox y grid, normalize.css y fuentes locales
+- **Front end:** React, TypeScript, Vite, React Router, CSS con flexbox y grid
+- **Back end:** Node.js, Express, TypeScript, MongoDB, Mongoose, bcrypt, JSON Web Token, express-rate-limit
+- **Servicios:** PokeAPI, Vercel y MongoDB Atlas
 
 ## Uso
 
 ```bash
-cd client
-npm install
-npm run dev     # servidor de desarrollo
-npm run build   # compila la aplicación
-npm run lint    # revisa el código
+npm run install:all   # instala client y server
+npm run dev:server    # API en http://localhost:3001
+npm run dev:client    # aplicación en http://localhost:5173
+npm run build         # compila las dos partes
+npm run lint          # revisa las dos partes
 ```
 
-PokeAPI no necesita clave, así que esta parte no usa variables de entorno.
+No hace falta configurar nada para probarlo en local: el cliente lee `client/.env.development`, y en desarrollo el servidor usa una base en memoria si no encuentra MongoDB. Para usar tus propios valores, copia `server/.env.example` a `server/.env`.
+
+## Variables de entorno
+
+| Parte  | Variable        | Descripción                             |
+| ------ | --------------- | --------------------------------------- |
+| server | `MONGO_URI`     | Cadena de conexión a MongoDB            |
+| server | `PORT`          | Puerto del servidor                     |
+| server | `CLIENT_ORIGIN` | Origen del front end permitido por CORS |
+| server | `JWT_SECRET`    | Clave para firmar los tokens            |
+| client | `VITE_API_URL`  | Dirección de la API (no es un secreto)  |
 
 ## Estructura
 
 ```
-client/src/
-├── components/  componentes de React
-├── hooks/       estado del catálogo
-├── images/      imágenes e iconos SVG
-├── styles/      estilos de cada componente
-├── utils/       peticiones a PokeAPI, tipos, constantes y utilidades
-└── vendor/      normalize.css y fuentes
+project-pokedex/
+├── client/src/
+│   ├── components/  componentes de React
+│   ├── contexts/    usuario actual
+│   ├── hooks/       catálogo, sesión, favoritos y avisos
+│   ├── images/      imágenes e iconos SVG
+│   ├── styles/      estilos de cada componente
+│   ├── utils/       peticiones, tipos, constantes y utilidades
+│   └── vendor/      normalize.css y fuentes
+└── server/src/
+    ├── controllers/ lógica de cada ruta
+    ├── middleware/  autorización, limitadores y errores
+    ├── models/      usuario y favorito
+    ├── routes/      rutas por recurso
+    └── utils/       constantes, errores y validación
 ```
+
+Consulta las rutas de la API en [`server/README.md`](server/README.md).

@@ -10,6 +10,7 @@
   border-radius: 6px;
   color: var(--color-panel);
   font-family: var(--font-display);
+  font-size: 16px;
   font-weight: 500;
   padding: 6px 12px;
   text-decoration: none;
@@ -26,6 +27,11 @@
 
 .navigation__link_active {
   border-color: var(--color-panel);
+}
+
+.navigation__button {
+  background-color: transparent;
+  cursor: pointer;
 }
 
 @media (max-width: 560px) {

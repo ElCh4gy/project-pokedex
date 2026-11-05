@@ -1,0 +1,51 @@
+.main {
+  flex: 1;
+  margin: 0 auto;
+  max-width: calc(var(--content-width) + 2 * var(--gutter));
+  padding: clamp(24px, 5vw, 48px) var(--gutter) 56px;
+  width: 100%;
+}
+
+.main__title {
+  font-size: clamp(30px, 6vw, 56px);
+  margin-bottom: 20px;
+}
+
+.main__results {
+  margin-top: 28px;
+}
+
+.main__count {
+  color: var(--color-ink-soft);
+  font-family: var(--font-display);
+  font-weight: 500;
+  margin: 0 0 12px;
+}
+
+.main__grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main__more {
+  background-color: var(--color-ink);
+  border: 0;
+  border-radius: 6px;
+  color: var(--color-panel);
+  cursor: pointer;
+  display: block;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  margin: 28px auto 0;
+  padding: 12px 28px;
+  transition: background-color 0.2s ease;
+}
+
+.main__more:hover {
+  background-color: var(--color-shell-dark);
+}

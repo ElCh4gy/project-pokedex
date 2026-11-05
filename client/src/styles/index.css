@@ -1,0 +1,59 @@
+:root {
+  --color-shell: #c8102e;
+  --color-shell-dark: #7e0a1e;
+  --color-lcd: #d6e3bf;
+  --color-panel: #f4f7ea;
+  --color-ink: #1c2a1b;
+  --color-ink-soft: #46563f;
+  --font-display: 'Chakra Petch', 'Trebuchet MS', sans-serif;
+  --font-body: 'IBM Plex Sans', 'Segoe UI', Arial, sans-serif;
+  --gutter: clamp(16px, 4vw, 48px);
+  --content-width: 1180px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-lcd);
+  background-image: radial-gradient(rgb(28 42 27 / 10%) 1px, transparent 1px);
+  background-size: 6px 6px;
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+h1,
+h2 {
+  font-family: var(--font-display);
+  line-height: 1.1;
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-ink);
+  outline-offset: 2px;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 2s !important;
+    transition: none !important;
+  }
+}

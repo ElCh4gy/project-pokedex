@@ -1,0 +1,27 @@
+.footer {
+  align-items: center;
+  background-color: var(--color-shell-dark);
+  color: var(--color-panel);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 14px;
+  gap: 8px 24px;
+  justify-content: space-between;
+  padding: 20px var(--gutter);
+}
+
+.footer__text {
+  margin: 0;
+}
+
+.footer__link {
+  color: inherit;
+}
+
+.footer__link:hover {
+  text-decoration: none;
+}
+
+.footer__link:focus-visible {
+  outline-color: var(--color-panel);
+}

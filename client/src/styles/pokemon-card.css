@@ -1,0 +1,87 @@
+.pokemon-card {
+  background-color: var(--color-panel);
+  border: 2px solid var(--color-ink);
+  border-radius: 10px 10px 10px 28px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 14px;
+}
+
+.pokemon-card__number {
+  color: var(--color-ink-soft);
+  font-family: var(--font-display);
+  font-weight: 500;
+  margin: 0;
+}
+
+.pokemon-card__image {
+  align-self: center;
+  aspect-ratio: 1;
+  height: auto;
+  object-fit: contain;
+  width: min(100%, 200px);
+}
+
+.pokemon-card__name {
+  font-size: 22px;
+  margin: 8px 0 10px;
+  overflow-wrap: anywhere;
+}
+
+.pokemon-card__types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  margin: 0 0 12px;
+  padding: 0;
+}
+
+.pokemon-card__type {
+  background-color: var(--type-color, #d8d8c8);
+  border: 1px solid var(--color-ink);
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 1px 8px;
+}
+
+.pokemon-card__type_kind_normal { --type-color: #d8d8c0; }
+.pokemon-card__type_kind_fighting { --type-color: #e88f7e; }
+.pokemon-card__type_kind_flying { --type-color: #c5bcf5; }
+.pokemon-card__type_kind_poison { --type-color: #d39ad8; }
+.pokemon-card__type_kind_ground { --type-color: #e6cd8c; }
+.pokemon-card__type_kind_rock { --type-color: #cfc083; }
+.pokemon-card__type_kind_bug { --type-color: #c6d45f; }
+.pokemon-card__type_kind_ghost { --type-color: #b5a6d6; }
+.pokemon-card__type_kind_steel { --type-color: #c9cede; }
+.pokemon-card__type_kind_fire { --type-color: #f6a56a; }
+.pokemon-card__type_kind_water { --type-color: #97bcf5; }
+.pokemon-card__type_kind_grass { --type-color: #a4dc86; }
+.pokemon-card__type_kind_electric { --type-color: #f8dc62; }
+.pokemon-card__type_kind_psychic { --type-color: #f79ab8; }
+.pokemon-card__type_kind_ice { --type-color: #b4e6e6; }
+.pokemon-card__type_kind_dragon { --type-color: #ab92f8; }
+.pokemon-card__type_kind_dark { --type-color: #b5a294; }
+.pokemon-card__type_kind_fairy { --type-color: #f3bdcb; }
+.pokemon-card__type_kind_stellar { --type-color: #9fd8d0; }
+
+.pokemon-card__measures {
+  border-top: 1px dashed var(--color-ink-soft);
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 1fr 1fr;
+  margin: auto 0 0;
+  padding-top: 10px;
+}
+
+.pokemon-card__measures dt {
+  color: var(--color-ink-soft);
+  font-size: 13px;
+}
+
+.pokemon-card__measures dd {
+  font-weight: 600;
+  margin: 0;
+}
